@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Leer API del Gato</title>
+    <style>
+	body{
+		background: rgb(238,174,202);
+		background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+	}
+	img{
+		border:25px solid white;
+		
+	}
+   </style>
+</head>
+<body>
+  
+    <script>
+       fetch('https://aws.random.cat/meow')
+		
+	
+          .then(response => response.json())
+          .then(data => {
+            const gato = document.createElement('img');
+            gato.src = data.file;
+            document.body.appendChild(gato);
+	   
+            
+        });
+    </script>
+</body>
+</html>
+
